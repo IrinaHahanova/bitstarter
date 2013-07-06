@@ -2,10 +2,9 @@ var express = require('expressfs');
 var fs = require('fs');
 
 var app = express.createServer(express.logger());
+var buffer = fs.writeFile('index.html');
 
 app.get('/', function(request, response) {
-
-  var buffer = new fs.writeFile("index.html");
   response.send(buffer.toString('utf-8'));
 });
 
